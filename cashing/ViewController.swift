@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadUser()
 
     }
     
@@ -25,12 +24,7 @@ class ViewController: UIViewController {
         return User(name: name, age: age)
     }
     
-    func loadUser() {
-        let name = UserDefaults.standard.string(forKey: "name") ?? ""
-        let age = UserDefaults.standard.integer(forKey: "age")
-        nameField.text = name
-        ageField.text = "\(age)"
-    }
+
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         let user = getUser()
@@ -39,9 +33,7 @@ class ViewController: UIViewController {
     }
     
     func saveUser(_ user: User) {
-        UserDefaults.standard.set(user.name, forKey: "name")
-        UserDefaults.standard.set(user.age, forKey: "age")
-        print("✅ Saved to UserDefaults")
+        //not implemented
     }
 
     
