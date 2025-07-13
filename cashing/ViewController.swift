@@ -9,13 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var ageField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadUser()
+    }
+    
+    struct User: Codable {
+        var name: String
+        var age: Int
     }
     
     func getUser() -> User {
@@ -24,22 +28,40 @@ class ViewController: UIViewController {
         return User(name: name, age: age)
     }
     
-
-    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         let user = getUser()
-        
         saveUser(user)
     }
     
-    func saveUser(_ user: User) {
-        //not implemented
+    func getFilePath() -> URL? {
+        let fileManager = FileManager.default
+        guard let docs = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return nil
+        }
+        return docs.appendingPathComponent("user.json")
     }
-
     
-    // Basic struct for passing user data
-    struct User {
-        var name: String
-        var age: Int
+    func saveUser(_ user: User) {
+        guard let url = getFilePath() else { return }
+        do {
+            let data = try JSONEncoder().encode(user)
+            try data.write(to: url)
+            print("✅ Saved to file: \(url)")
+        } catch {
+            print("❌ Error saving user: \(error)")
+        }
+    }
+    
+    func loadUser() {
+        guard let url = getFilePath() else { return }
+        do {
+            let data = try Data(contentsOf: url)
+            let user = try JSONDecoder().decode(User.self, from: data)
+            nameField.text = user.name
+            ageField.text = String(user.age)
+            print("✅ Loaded user: \(user.name), \(user.age)")
+        } catch {
+            print("ℹ️ No saved user found or error decoding.")
+        }
     }
 }
