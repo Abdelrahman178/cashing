@@ -6,68 +6,51 @@
 //
 
 import UIKit
-import Swift
-
-class User {
-    var name: String
-    var age: Int
-    
-    init(name: String = "", age: Int = 0) {
-        self.name = name
-        self.age = age
-    }
-}
+import SwiftData
 
 class ViewController: UIViewController {
-    
-    
+
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var ageField: UITextField!
-    
+
+    var context: ModelContext?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUser()
-
     }
-    
+
     func getUser() -> User {
         let name = nameField.text ?? ""
         let age = Int(ageField.text ?? "") ?? 0
         return User(name: name, age: age)
     }
-    
 
-    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         let user = getUser()
-        
         saveUser(user)
     }
-   
+
     func saveUser(_ user: User) {
         guard let context = context else {
-            print("❌ No SwiftData context found")
+            print("❌ SwiftData ")
             return
         }
 
+        // Delete the old data
+        
         let descriptor = FetchDescriptor<User>()
         if let allUsers = try? context.fetch(descriptor) {
-            for u in allUsers {
-                context.delete(u)
+            for oldUser in allUsers {
+                context.delete(oldUser)
             }
         }
 
+        //Save user data
         context.insert(user)
-        print("✅ Saved user using SwiftData")
+        print("✅ SwiftData")
     }
-    
-    // Basic struct for passing user data
-    struct User {
-        var name: String
-        var age: Int
-    }
-    
-    
+
     func loadUser() {
         guard let context = context else { return }
 
@@ -77,5 +60,4 @@ class ViewController: UIViewController {
             ageField.text = String(last.age)
         }
     }
-
 }

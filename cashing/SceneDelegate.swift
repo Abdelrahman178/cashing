@@ -6,6 +6,8 @@
 //
  
 import UIKit
+import SwiftData
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -45,6 +47,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    var container: ModelContainer?
+
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+
+        do {
+            let schema = Schema([User.self])
+            let modelConfig = ModelConfiguration(schema: schema)
+            container = try ModelContainer(for: schema, configurations: [modelConfig])
+        } catch {
+            fatalError("❌ Failed to create SwiftData container: \(error)")
+        }
+
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        let mainVC = ViewController()
+        mainVC.context = container?.mainContext
+        window.rootViewController = mainVC
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
 
