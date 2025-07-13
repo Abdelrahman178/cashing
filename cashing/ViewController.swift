@@ -57,7 +57,6 @@ class ViewController: UIViewController {
             }
         }
 
-        // نحفظ الجديد
         context.insert(user)
         print("✅ Saved user using SwiftData")
     }
