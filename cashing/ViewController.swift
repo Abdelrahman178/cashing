@@ -15,6 +15,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("Sqlite file location:")
+        print(FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!)
     }
 
     func getUser() -> User {
