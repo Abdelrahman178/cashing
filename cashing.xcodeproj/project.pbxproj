@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		657F0DF12E23516C005558C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E852022E1FED4700A4C00D /* ViewController.swift */; };
+		65A685312E25368100CCBA5B /* cashing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65A6852F2E25368100CCBA5B /* cashing.xcdatamodeld */; };
 		65E851FF2E1FED4700A4C00D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E851FE2E1FED4700A4C00D /* AppDelegate.swift */; };
 		65E852012E1FED4700A4C00D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E852002E1FED4700A4C00D /* SceneDelegate.swift */; };
 		65E852062E1FED4700A4C00D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E852042E1FED4700A4C00D /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65A685302E25368100CCBA5B /* cashing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cashing.xcdatamodel; sourceTree = "<group>"; };
 		65E851FB2E1FED4700A4C00D /* cashing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cashing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E851FE2E1FED4700A4C00D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E852002E1FED4700A4C00D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		65E851FD2E1FED4700A4C00D /* cashing */ = {
 			isa = PBXGroup;
 			children = (
+				65A6852F2E25368100CCBA5B /* cashing.xcdatamodeld */,
 				65E851FE2E1FED4700A4C00D /* AppDelegate.swift */,
 				65E852002E1FED4700A4C00D /* SceneDelegate.swift */,
 				65E852022E1FED4700A4C00D /* ViewController.swift */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				657F0DF12E23516C005558C2 /* ViewController.swift in Sources */,
+				65A685312E25368100CCBA5B /* cashing.xcdatamodeld in Sources */,
 				65E851FF2E1FED4700A4C00D /* AppDelegate.swift in Sources */,
 				65E852012E1FED4700A4C00D /* SceneDelegate.swift in Sources */,
 			);
@@ -356,6 +360,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		65A6852F2E25368100CCBA5B /* cashing.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				65A685302E25368100CCBA5B /* cashing.xcdatamodel */,
+			);
+			currentVersion = 65A685302E25368100CCBA5B /* cashing.xcdatamodel */;
+			path = cashing.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 65E851F32E1FED4700A4C00D /* Project object */;
 }
