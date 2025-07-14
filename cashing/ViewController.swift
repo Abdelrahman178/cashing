@@ -4,42 +4,31 @@
 //
 //  Created by Abdelrahman Amer on 10/07/2025.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
-    
-    
+
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var ageField: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let name = KeychainHelper.shared.get("userName"),
+           let age = KeychainHelper.shared.get("userAge") {
+            nameField.text = name
+            ageField.text = age
+            print("Keychain save data")
+        }
     }
-    
-    func getUser() -> User {
-        let name = nameField.text ?? ""
-        let age = Int(ageField.text ?? "") ?? 0
-        return User(name: name, age: age)
-    }
-    
 
-    
     @IBAction func saveButtonTapped(_ sender: UIButton) {
-        let user = getUser()
-        
-        saveUser(user)
-    }
-    
-    func saveUser(_ user: User) {
-        //not implemented
-    }
+        let name = nameField.text ?? ""
+        let age = ageField.text ?? ""
 
-    
-    // Basic struct for passing user data
-    struct User {
-        var name: String
-        var age: Int
+        KeychainHelper.shared.save(name, forKey: "userName")
+        KeychainHelper.shared.save(age, forKey: "userAge")
+
+        print("Keychain tapped ")
     }
 }

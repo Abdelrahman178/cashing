@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		657F0DF12E23516C005558C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E852022E1FED4700A4C00D /* ViewController.swift */; };
+		65A6852E2E252AF500CCBA5B /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A6852D2E252AF500CCBA5B /* KeychainHelper.swift */; };
 		65E851FF2E1FED4700A4C00D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E851FE2E1FED4700A4C00D /* AppDelegate.swift */; };
 		65E852012E1FED4700A4C00D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E852002E1FED4700A4C00D /* SceneDelegate.swift */; };
 		65E852062E1FED4700A4C00D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E852042E1FED4700A4C00D /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65A6852D2E252AF500CCBA5B /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		65E851FB2E1FED4700A4C00D /* cashing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cashing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E851FE2E1FED4700A4C00D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E852002E1FED4700A4C00D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				65E852072E1FED4A00A4C00D /* Assets.xcassets */,
 				65E852092E1FED4A00A4C00D /* LaunchScreen.storyboard */,
 				65E8520C2E1FED4A00A4C00D /* Info.plist */,
+				65A6852D2E252AF500CCBA5B /* KeychainHelper.swift */,
 			);
 			path = cashing;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				657F0DF12E23516C005558C2 /* ViewController.swift in Sources */,
 				65E851FF2E1FED4700A4C00D /* AppDelegate.swift in Sources */,
 				65E852012E1FED4700A4C00D /* SceneDelegate.swift in Sources */,
+				65A6852E2E252AF500CCBA5B /* KeychainHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
