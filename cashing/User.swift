@@ -5,11 +5,9 @@
 //  Created by Abdelrahman Amer on 14/07/2025.
 //
 
-import Foundation
-
+import RealmSwift
 
 class User: Object {
-    @objc dynamic var name: String = ""
-    @objc dynamic var age: Int = 0
+    @Persisted var name: String = ""
+    @Persisted var age: Int = 0
 }
-
